@@ -25,14 +25,14 @@ namespace Red_Folder.WebCrawl
 
         private string _problems = "";
 
-        public Crawler(string id, string host, ILogger log)
+        public Crawler(CrawlRequest request, ILogger log)
         {
-            _id = id;
-            _host = host;
+            _id = request.Id;
+            _host = request.Host;
 
             var internalDomains = new List<string>
             {
-                host,
+                _host,
                 _blogDomain,
                 _oldBlogDomain,
                 _githubDomain
@@ -46,7 +46,7 @@ namespace Red_Folder.WebCrawl
                             .Next(new PageProcessor(_githubDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_blogDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_oldBlogDomain, new ClientWrapper(log), new RedirectLinksExtractor())
-                            .Next(new PageProcessor(host, new ClientWrapper(log), new ContentLinksExtractor(host))
+                            .Next(new PageProcessor(_host, new ClientWrapper(log), new ContentLinksExtractor(_host))
                             .Next(new UnknownProcessor())))))))));
         }
 
