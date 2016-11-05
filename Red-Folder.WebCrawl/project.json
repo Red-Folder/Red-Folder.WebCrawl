@@ -1,0 +1,32 @@
+﻿{
+  "name": "Red-Folder.WebCrawl",
+  "version": "0.0.0",
+  "description": "Libraries for the models used in the Red-Folder.WebCrawl library",
+  "copyright": "Red Folder Consultancy Ltd 2016",
+  "title": "Red-Folder.WebCrawl",
+  "authors": [
+    "Red Folder Consultancy Ltd"
+  ],
+  "supports": {},
+  "frameworks": {
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Runtime.Serialization": "",
+        "System.Net": "",
+        "System.Net.Http": ""
+      }
+    },
+    "netstandard1.2": {
+      "dependencies": {
+        "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+        "NETStandard.Library": "1.6.0",
+        "System.Runtime.Serialization.Primitives": "4.3.0-preview1-24530-04",
+        "System.Net.Http": "4.1.0"
+      }
+    }
+  },
+  "dependencies": {
+    "Red-Folder.WebCrawl.Data": "0.1.87",
+    "Red-Folder.Logging": "0.1.97"
+  }
+}
