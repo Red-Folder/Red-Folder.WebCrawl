@@ -9,7 +9,7 @@
   ],
   "supports": {},
   "frameworks": {
-    "net45": {
+    "net46": {
       "frameworkAssemblies": {
         "System.Runtime.Serialization": "",
         "System.Net": "",
