@@ -44,7 +44,7 @@ namespace Red_Folder.WebCrawl
                             .Next(new PageProcessor(_gistDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_githubDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_host, new ClientWrapper(log), new ContentLinksExtractor(_host))
-                            .Next(new UnknownProcessor()))))))));
+                            .Next(new UnknownProcessor())))))))));
         }
 
         public void AddUrl(string url)
