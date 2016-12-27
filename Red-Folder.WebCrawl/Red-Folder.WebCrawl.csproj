@@ -47,6 +47,7 @@
     <Compile Include="Command\ImageProcessor.cs" />
     <Compile Include="Command\IProcessUrl.cs" />
     <Compile Include="Command\KnownPageProcessor.cs" />
+    <Compile Include="Command\EmailProcessor.cs" />
     <Compile Include="Command\PageProcessor.cs" />
     <Compile Include="Command\UnknownProcessor.cs" />
     <Compile Include="Crawler.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Models\ExternalPageUrlInfo.cs" />
     <Compile Include="Models\ImageUrlInfo.cs" />
     <Compile Include="Models\IUrlInfo.cs" />
+    <Compile Include="Models\EmailUrlInfo.cs" />
     <Compile Include="Models\KnownPageUrlInfo.cs" />
     <Compile Include="Models\PageUrlInfo.cs" />
     <Compile Include="Models\UnknownUrlInfo.cs" />

@@ -12,7 +12,7 @@ namespace Red_Folder.WebCrawl.Helpers
         public IList<IUrlInfo> Extract(string url)
         {
             var links = new List<IUrlInfo>();
-            links.Add(new AwaitingProcessingUrlInfo(url.ToLower().Trim()));
+            links.Add(new AwaitingProcessingUrlInfo(url.Trim()));
             return links;
         }
     }

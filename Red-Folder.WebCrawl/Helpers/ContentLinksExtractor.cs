@@ -41,7 +41,7 @@ namespace Red_Folder.WebCrawl.Helpers
 
         private string Format(string url)
         {
-            return EnsurePrefixed(url.ToLower());
+            return EnsurePrefixed(url);
         }
 
         private string EnsurePrefixed(string url)
@@ -53,13 +53,13 @@ namespace Red_Folder.WebCrawl.Helpers
             }
             else
             {
-                if (url.ToLower().StartsWith("//"))
+                if (url.StartsWith("//"))
                 {
                     return "https:" + url;
                 }
                 else
                 {
-                    if (url.ToLower().StartsWith("/"))
+                    if (url.StartsWith("/"))
                     {
                         return _domain + url;
                     }

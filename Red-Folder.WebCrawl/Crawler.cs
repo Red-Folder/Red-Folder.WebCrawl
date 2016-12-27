@@ -14,8 +14,6 @@ namespace Red_Folder.WebCrawl
     {
         private IDictionary<string, IUrlInfo> urls = new Dictionary<string, IUrlInfo>();
         private int _maxDepth = 10;
-        private string _blogDomain = @"http://blog.red-folder.com";
-        private string _oldBlogDomain = @"http://red-folder.blogspot.co.uk";
         private string _githubDomain = @"https://github.com/red-folder";
 
         private string _id;
@@ -33,8 +31,6 @@ namespace Red_Folder.WebCrawl
             var internalDomains = new List<string>
             {
                 _host,
-                _blogDomain,
-                _oldBlogDomain,
                 _githubDomain
             };
 
@@ -42,12 +38,11 @@ namespace Red_Folder.WebCrawl
                             .Next(new ImageProcessor(new ClientWrapper(log))
                             .Next(new ContentProcessor(new ClientWrapper(log))
                             .Next(new KnownPageProcessor()
+                            .Next(new EmailProcessor()
                             .Next(new ExternalPageProcessor(internalDomains)
                             .Next(new PageProcessor(_githubDomain, new ClientWrapper(log), null)
-                            .Next(new PageProcessor(_blogDomain, new ClientWrapper(log), null)
-                            .Next(new PageProcessor(_oldBlogDomain, new ClientWrapper(log), new RedirectLinksExtractor())
                             .Next(new PageProcessor(_host, new ClientWrapper(log), new ContentLinksExtractor(_host))
-                            .Next(new UnknownProcessor())))))))));
+                            .Next(new UnknownProcessor()))))))));
         }
 
         public void AddUrl(string url)
