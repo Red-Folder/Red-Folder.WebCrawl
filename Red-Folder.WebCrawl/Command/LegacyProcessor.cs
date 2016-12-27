@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace Red_Folder.WebCrawl.Command
 {
-    public class LegacyProcessor : HttpClientBaseProcessor
+    public class LegacyProcessor : BaseProcessor
     {
-        public LegacyProcessor(IClientWrapper httpClient) : base(httpClient)
-        {
-        }
-
         public override IUrlInfo Process(string url)
         {
             if (CanBeHandled(url))
