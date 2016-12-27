@@ -47,7 +47,8 @@ namespace Red_Folder.WebCrawl.Helpers
         private string EnsurePrefixed(string url)
         {
             if (url.ToLower().StartsWith("http") ||
-                url.ToLower().StartsWith("skype"))
+                url.ToLower().StartsWith("skype") ||
+                url.ToLower().StartsWith("mailto"))
             {
                 return url;
             }

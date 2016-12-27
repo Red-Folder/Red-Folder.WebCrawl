@@ -15,6 +15,7 @@ namespace Red_Folder.WebCrawl
         private IDictionary<string, IUrlInfo> urls = new Dictionary<string, IUrlInfo>();
         private int _maxDepth = 10;
         private string _githubDomain = @"https://github.com/red-folder";
+        private string _gistDomain = @"https://gist.github.com";
 
         private string _id;
         private string _host;
@@ -40,6 +41,7 @@ namespace Red_Folder.WebCrawl
                             .Next(new KnownPageProcessor()
                             .Next(new EmailProcessor()
                             .Next(new ExternalPageProcessor(internalDomains)
+                            .Next(new PageProcessor(_gistDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_githubDomain, new ClientWrapper(log), null)
                             .Next(new PageProcessor(_host, new ClientWrapper(log), new ContentLinksExtractor(_host))
                             .Next(new UnknownProcessor()))))))));
