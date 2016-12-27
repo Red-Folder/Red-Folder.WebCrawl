@@ -36,9 +36,9 @@ namespace Red_Folder.WebCrawl
             };
 
             _processor = new CloudflareCgiProcesser()
+                            .Next(new LegacyProcessor()
                             .Next(new ImageProcessor(new ClientWrapper(log))
                             .Next(new ContentProcessor(new ClientWrapper(log))
-                            .Next(new LegacyProcessor()
                             .Next(new KnownPageProcessor()
                             .Next(new EmailProcessor()
                             .Next(new ExternalPageProcessor(internalDomains)
