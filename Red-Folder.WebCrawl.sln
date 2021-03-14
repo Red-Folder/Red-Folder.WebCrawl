@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Red-Folder.WebCrawl", "Red-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Red-Folder.WebCrawl.Tests.Unit", "Red-Folder.WebCrawl.Tests.Unit\Red-Folder.WebCrawl.Tests.Unit.csproj", "{0A2B3C0C-7DD0-448C-86AC-4F9D85715317}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C30929CA-B3C2-4E1B-BEA0-2ED9CAD1BFE5}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
